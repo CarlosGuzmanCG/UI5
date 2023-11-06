@@ -1,0 +1,60 @@
+<mvc:View
+    controllerName="modeloperations.controller.emp"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="page">
+        <Page title="CRUD Operations">
+            <content>
+                <Table
+                    items="{/students}"
+                >
+
+                <headerToolbar>
+                    <Toolbar >
+                        <ToolbarSpacer ></ToolbarSpacer>
+                        <Button icon="sap-icon://add" text="Add student" press="handleAddStudent"></Button>
+                    </Toolbar>
+                </headerToolbar>
+
+                    <columns>
+                        <Column>
+                            <Text text="Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Gender" />
+                        </Column>
+                        <Column>
+                            <Text text="Date of Birth" />
+                        </Column>
+                        <Column hAlign="Center">
+                            <Text text="Father name" />
+                        </Column>
+                        <Column hAlign="Right">
+                            <Text text="Contact number" />
+                        </Column>
+                        <Column hAlign="Right">
+                            <Text text="Action" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <ObjectIdentifier title="{firstName}"/>
+                                <Text text="{genderText}"/>
+                                <Text text="{dateOfBirth}"/>
+                                <Text text="{fatherName}"/>
+                                <Text text="{contactNumber}"/>
+                                <HBox justifyContent="End">
+                                    <Button icon="sap-icon://edit" press="handleEditStudent"></Button>
+                                    <Button icon="sap-icon://delete" press="handleDeleteStudent"></Button>
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        </Page>
+    </Shell>
+</mvc:View>
